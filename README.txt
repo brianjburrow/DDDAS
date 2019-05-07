@@ -10,7 +10,7 @@ Email:  Brianjburrows@gmail.com
 -- Applications:
 -- Methods:
 -- oddballScripts:
--- randomIdeas:
+-- Development:
 -- utilityFunctions:
 
 -- Applications Folder
@@ -31,7 +31,7 @@ Email:  Brianjburrows@gmail.com
 -- oddballScripts Folder
 - This is typically where I first write my visualization codes, and if I think they are useful, they get relocated.
 
--- randomIdeas:
+-- Development:
 - This is where I test new research ideas, new methods from journals that I read, etc.,
 - Once the codes are functioning, they either get moved to the Applications folder (if I write a paper), the methods folder (if they are useful methods), or the utilityFunctions (if they are useful functions)
 - Any codes in here should also have .pdf files of any necessary or useful papers.
