@@ -1,6 +1,12 @@
 Author: Brian Burrows
 Email:  Brianjburrows@gmail.com
 
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+NOTE: DDDAS datasets are not available in this GIT repo.  E-mail me, and I can send you the datasets and surrogate models necessary, but due to file size constraints, I couldn't upload them here.
+------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
+
 - This folder contains a small portion of (functioning) code that I wrote as a graduate student at Texas A&M.
 - Most of the stuff that I tried was either not generally useful or not useful at all, so I have left those items out.
 - To get the codes running, navigate to the parent folder containing the DDDAS folder.  Right click DDDAS in the MATLAB directory tree, and 
