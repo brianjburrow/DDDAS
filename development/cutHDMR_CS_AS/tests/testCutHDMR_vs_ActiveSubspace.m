@@ -39,12 +39,26 @@ samp1 = samplerHandle(1000);
 samp2 = actSub.ProjectSamples(samp1);
 scatter(samp1(:,1), samp1(:,2), 10, 'k', 'filled')
 hold on
+pbaspect([1 1 1])
 scatter(samp2(:,1), samp2(:,2), 10, 'b', 'filled')
+scatter(samp2(:,1), cutLine2(2)*ones(size(samp2(:,1))), 10, 'b', 'filled')
+scatter(cutLine2(1)*ones(size(samp2(:,2))), samp2(:,2), 10, 'b', 'filled')
+
+samp3 = actSub.invertProjection([samp2(:,1), cutLine2(2)*ones(size(samp2(:,1)))]);     % Get cut samples in new subspace
+samp4 = actSub.invertProjection([cutLine2(1)*ones(size(samp2(:,2))), samp2(:,2)]);     % get cut samples in new subspace
+scatter(samp3(:,1), samp3(:,2), 10, 'r', 'filled')
+hold on
+pbaspect([1 1 1])
+scatter(samp4(:,1), samp4(:,2), 10, 'r', 'filled')
+
+
 figure(1)
 
 cutSamples = [zeros(size(samp2(:,1))), samp1(:,2)];
 cutSamp2 = actSub.ProjectSamples(cutSamples);
 scatter(cutSamp2(:,1), cutSamp2(:,2))
+
+
 
 figure(10000)
 whatSamples = actSub.invertProjection(samp1);

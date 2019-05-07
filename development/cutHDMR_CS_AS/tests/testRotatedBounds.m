@@ -32,6 +32,7 @@ subplot(2,2,1)
 samples1 = samplerHandle(1000);
 scatter(samples1(:,1), samples1(:,2), 10, 'k', 'filled')
 hold on
+pbaspect([1 1 1])
 xlim([-2, 2])
 ylim([-2, 2])
 xlabel('X_1')
@@ -43,6 +44,7 @@ samples2 = actSub.ProjectSamples(samples1);
 [sampCut1, sampCut2, orig1, orig2] = rejectionSamplerActSub(1000, samplerHandle, actSub, [-1, -1], [1, 1], cutLine);
 scatter(samples2(:,1), samples2(:,2), 10, 'b', 'filled')
 hold on
+pbaspect([1 1 1])
 scatter(orig1(:,1), orig1(:,2), 10, 'r', 'filled')
 scatter(orig2(:,1), orig2(:,2), 10, 'r', 'filled')
 xlim([-2, 2])
@@ -60,6 +62,7 @@ rotationMatrix = actSub.W1';
 subplot(2,2,3)
 scatter(samples1(:,1), samples1(:,2), 10, 'k', 'filled')
 hold on
+pbaspect([1 1 1])
 scatter(sampCut1(:,1), sampCut1(:,2), 10, 'r', 'filled')
 scatter(sampCut2(:,1), sampCut2(:,2), 10, 'r', 'filled')
 xlim([-2, 2])
@@ -72,6 +75,7 @@ subplot(2,2,4)
 z = ConvertRotatedDomain(samples2, newLowBounds, newUpBounds);
 scatter(z(:,1), z(:,2), 10, 'b', 'filled');
 hold on
+pbaspect([1 1 1])
 xlim([-2, 2])
 ylim([-2, 2])
 xlabel('Y_1^{u}')
