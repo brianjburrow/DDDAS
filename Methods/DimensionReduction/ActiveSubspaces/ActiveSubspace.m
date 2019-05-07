@@ -84,7 +84,7 @@ classdef ActiveSubspace < handle
         end
         
         function x = invertProjection(obj, Y)
-            x = ((obj.W1')^(1) * Y')';
+            x = ((obj.W1)^(1) * Y')';
         end
     end
     

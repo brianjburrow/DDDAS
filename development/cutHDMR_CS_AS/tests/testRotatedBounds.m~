@@ -1,0 +1,37 @@
+clear all
+close all
+clc
+%% Setup problem 
+nMCsamples = 10000;                                                         % Number of Monte Carlo samples used to construct active subspace
+nDimensions = 2;                                                            % Number of input variables into our function of interest
+eigCut = 0.99999999;                                                        % Truncate dimension when the cumulative sum of the eigenvalues are greater than eigCut
+samplerHandle = @(numSamp) [...                                             % A random variable generator over the input space for constructing the HDMR and Active subspace.
+    chebyshevSampler(numSamp, -1, 1),...
+    chebyshevSampler(numSamp, -1, 1)...
+    ];
+cutLine = [.75, -.25];                                                           % The cutLine about which cutHDMR is computed (reference point essentially)
+
+%% Create Active Subspace
+funcHandle = @(xx) testFunc(xx);
+gradHandle = @(xx) gradTestFunc(xx);
+
+actSub = ActiveSubspace(gradHandle, ...
+    nMCsamples, ...
+    nDimensions,...
+    samplerHandle, ...                                                      % BB May 2, 2019: should this be a different random variable than chebyshev?
+    eigCut);                                                                % Cumulative eigenvalues is a good way to cut off dimensions
+
+
+%% Create Unaltered cutHDMR surrogate, computation accelerated using Compressed Sensing and convergence monitoring
+nSamples = 3;                                                               % Number of initial Samples to evaluate 
+hdmr = cutHDMR_compressedSensing(funcHandle, cutLine, nSamples, 6,...       % Initialize cutHDMR object
+    'legendre', samplerHandle);
+hdmr = hdmr.run();                                                          % Construct cutHDMR surrogate model
+
+%% Create altered cutHDMR surrogate by projecting onto active subspace, computation accelerated using Compressed Sensing
+% Map all necessary components to the active subspace
+funcHandle2 = @(yy) testFuncMapped(yy, actSub.W1);                          % Reparameterize the test function to take values on the mapped subspace.
+samplerHandle2 = @(numSamp) actSub.ProjectSamples(samplerHandle(numSamp));  % Project chebyshev points onto the new subspace.
+cutLine2 = actSub.ProjectSamples(cutLine);      
+
+lowerBounds = [-1; -1]

@@ -9,7 +9,7 @@ samplerHandle = @(numSamp) [...                                             % A 
     chebyshevSampler(numSamp, -1, 1),...
     chebyshevSampler(numSamp, -1, 1)...
     ];
-cutLine = [-.25, -.25];                                                           % The cutLine about which cutHDMR is computed (reference point essentially)
+cutLine = [0.0, 0.0];                                                           % The cutLine about which cutHDMR is computed (reference point essentially)
 
 %% Create Active Subspace
 funcHandle = @(xx) testFunc(xx);
@@ -24,7 +24,7 @@ actSub = ActiveSubspace(gradHandle, ...
 
 %% Create Unaltered cutHDMR surrogate, computation accelerated using Compressed Sensing and convergence monitoring
 nSamples = 3;                                                               % Number of initial Samples to evaluate 
-hdmr = cutHDMR_compressedSensing(funcHandle, cutLine, nSamples, 4,...       % Initialize cutHDMR object
+hdmr = cutHDMR_compressedSensing(funcHandle, cutLine, nSamples, 6,...       % Initialize cutHDMR object
     'legendre', samplerHandle);
 hdmr = hdmr.run();                                                          % Construct cutHDMR surrogate model
 
@@ -36,11 +36,12 @@ cutLine2 = actSub.ProjectSamples(cutLine);                                  % Pr
 
 figure(100)
 samp1 = samplerHandle(1000);
-samp2 = samplerHandle2(1000);
+samp2 = actSub.ProjectSamples(samp1);
 samp3 = actSub.invertProjection([samp2(:,1), cutLine2(2)*ones(size(samp2(:,1)))]);     % Get cut samples in new subspace
 samp4 = actSub.invertProjection([cutLine2(1)*ones(size(samp2(:,2))), samp2(:,2)]);     % get cut samples in new subspace
 scatter(samp1(:,1), samp1(:,2), 10, 'k', 'filled')
 hold on
+pbaspect([1 1 1])
 scatter(samp2(:,1), samp2(:,2), 10, 'b', 'filled')
 figure(1)
 

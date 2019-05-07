@@ -1,0 +1,6 @@
+function z = ConvertRotatedDomain(x, lowBound, upBound)
+% Convert points in an arbitrary D-dimensional hypercube to the [-1, 1]^D
+% x is an nSamples x D matrix;
+D = length(lowBound);
+
+lowBound = reshape(lowBound, 
