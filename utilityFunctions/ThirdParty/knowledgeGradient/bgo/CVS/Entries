@@ -1,0 +1,36 @@
+/AnimateCKGData.mat/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/Branin.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/ConcentratedLikelihood.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/DiscreteLHS.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/EGO.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/EmpiricalVariogram.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/EstimateHyperparameters.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/EstimateHyperparametersNoNoise.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/FitBranin.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/Hartman3.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/HuangBranin.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/MakeTrueValList.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/PlotEgoKG.m/1.1.1.1/Mon Oct  5 02:42:57 2009//
+/PlotKGWhy.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SKO.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveCKG.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveNoNoiseCKG.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveNoNoiseEGO.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveNoisyCKG.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveNoisySKO.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimAdaptiveSKO.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimFixedHyperCKG.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimFixedHyperCKGStar.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimFixedHyperHYB.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimFixedHyperHYBStar.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimFixedHyperSKO.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/SimIND.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/TiltedBranin.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+/TrueVariogram.m/1.1.1.1/Mon Oct  5 02:42:58 2009//
+D/obsolete////
+D/old////
+D/sim////
+D/test////
+D/animations////
+/PlotKG.m/1.1/Mon Oct 19 23:40:08 2009//
+/PlotPosterior.m/1.1/Mon Oct 19 23:51:58 2009//

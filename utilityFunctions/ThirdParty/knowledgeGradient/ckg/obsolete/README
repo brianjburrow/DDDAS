@@ -1,0 +1,4 @@
+obsolete/
+This directory contains original implementations of some functions.  These
+functions are either slower or more prone to numerical noise than their
+replacements, but they are used by the test code in the test/ directory.

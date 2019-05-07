@@ -1,0 +1,1 @@
+function log_p = log_truncated_mvnrnd(x, mu, Sigma)
