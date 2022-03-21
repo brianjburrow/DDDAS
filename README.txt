@@ -23,7 +23,6 @@ NOTE: DDDAS datasets are not available in this GIT repo.  E-mail me, and I can s
 - This folder contains direct applications of the Methods from the "Methods" folder, including the code that I used to generate the figures in my journal papers.
 - Many of these are confusing, but they generate the plots from my papers.  This also contains a set of functions that I used to generate animations and visualitation
 - tools for presentations.
-- All of these files are directly executable, and rely on techniques stored in the subsequent folders.
 
 -- Methods Folder
 - This folder contains working packages for a few techniques from the literature, including 
